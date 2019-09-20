@@ -1,0 +1,49 @@
+Virtual Environment :
+
+# What is virtual environment ?
+
+A self-contained directory that contains a Python installation for a particular version of Python (can be 2.7, 3.3, 3.7, 3.8), and dependent packages
+
+# Why do you need Virtual Environment ?
+
+When working on multiple projects with multiple packages and their dependencies, its difficult to keep track of dependencies. Using virtual environments will make your life easier by
+
+1. Installing dependencies required by different projects separately for projects using virtual environments.
+Eg: Django 1.8 vs Django 2.2
+2. Keeping different versions of modules specific to a project isolated and keeping conflicts at bay from wrong version of a dependencies
+
+
+# How to create a virtual environment ? <br>
+Its simple if you use `Python 3.7`
+In python 3.7 
+- create a virtual environment called functional genomics <br>
+`python3 -m venv functional_genomics`
+or 
+`python3 -m venv /path/to/new/virtual/environment`
+
+- activate the virutal environment <br>
+`source functional_genomics/bin/activate`
+
+- install required modules <br>
+`pip3 install cryptography` <br>
+`pip3 install Requests` <br>
+
+
+- list all packages in a given environment and see <br>
+`pip list`
+
+- write them out to txt file for easy installation or during making it open source <br>
+`pip freeze > requirements.txt`
+
+# virtual environment in Jupyter 
+
+We need ipykernel to integrate this virtual environment with jupyter notebook/Lab <br>
+
+- install ipykernel from iside the activated environment <br>
+`pip install ipykernel`
+
+- Install this kernel to your user account <br>
+`ipython kernel install --user --name=functional_genomics`
+
+# Hurray !! Open your jupyter notebook and load the new kernel <br> 
+ You can deactivate the virtual environment using `deactivate`
